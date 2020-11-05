@@ -1,0 +1,14 @@
+table {
+  width: 98%;
+  margin-left: 1%;
+  margin-top: 10px;
+}
+
+.alterar-cursor {
+  cursor: pointer;
+}
+
+.centralizar-texto {
+  text-align: center;
+  margin-top: 5px;
+}

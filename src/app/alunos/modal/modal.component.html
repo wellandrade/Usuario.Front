@@ -1,0 +1,40 @@
+<h1 mat-mat-dialog-title>Cadastrar novo aluno</h1>
+<div mat-mat-dialog-content>
+  <form [formGroup]="alunoForm">
+    <mat-form-field class="largura-campo" >
+      <mat-label>Nome</mat-label>
+      <input matInput formControlName="nome" name="nome" autocomplete="off">
+    </mat-form-field>
+
+    <mat-form-field class="largura-campo">
+      <mat-label>Sobrenome</mat-label>
+      <input matInput formControlName="sobrenome" nome="sobrenome" autocomplete="off" >
+    </mat-form-field>
+
+    <mat-form-field class="largura-campo">
+      <mat-label>E-mail</mat-label>
+      <input matInput formControlName="email"  nome="email" autocomplete="off" >
+    </mat-form-field>
+
+    <mat-form-field class="largura-campo">
+      <mat-label>Data de nascimento</mat-label>
+      <input matInput [matDatepicker]="picker1" formControlName="dataNascimento" name="dataNascimento" autocomplete="off" >
+      <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+      <mat-datepicker #picker1></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field appearance="largura-campo">
+      <mat-label>Nível de escolaridade</mat-label>
+      <mat-select formControlName="escolaridade" name="escolaridade">
+        <mat-option value="1">Infantil</mat-option>
+        <mat-option value="2">Fundamental</mat-option>
+        <mat-option value="3">Ensino médio</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </form>
+</div>
+
+<div mat-dialog-actions>
+  <button mat-raised-button color="primary" (click)="salvar()" [disabled]="!alunoForm.valid">Salvar</button>
+  <button mat-button (click)="fecharModal()" >Cancelar</button>
+</div>

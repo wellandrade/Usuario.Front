@@ -1,0 +1,29 @@
+<h1 mat-mat-dialog-title>Alterar dados do aluno</h1>
+<div mat-mat-dialog-content>
+  <form [formGroup]="alterarAlunoForm" >
+    <mat-form-field class="tamanho-input" >
+      <mat-label>Código do aluno</mat-label>
+      <input matInput formControlName="id" name="id" readonly>
+    </mat-form-field>
+
+    <mat-form-field class="tamanho-input">
+      <mat-label>Nome</mat-label>
+      <input matInput formControlName="nome" name="nome" autocomplete="off">
+    </mat-form-field>
+
+    <mat-form-field class="tamanho-input">
+      <mat-label>Sobrenome</mat-label>
+      <input matInput formControlName="sobrenome" name="sobrenome" autocomplete="off">
+    </mat-form-field>
+
+     <mat-form-field class="tamanho-input">
+      <mat-label>E-mail</mat-label>
+      <input matInput formControlName="email" nome="email" autocomplete="off" >
+    </mat-form-field>
+
+    <div mat-dialog-actions>
+      <button mat-raised-button color="primary" (click)="salvar()" [disabled]="!alterarAlunoForm.valid">Salvar</button>
+      <button mat-button (click)="fecharModal()">Voltar</button>
+    </div>
+  </form>
+</div>
